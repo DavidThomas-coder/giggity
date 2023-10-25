@@ -49,3 +49,5 @@ class Gig extends Model {
         }
     }
 }
+
+module.exports = Gig
