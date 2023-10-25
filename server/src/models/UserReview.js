@@ -1,34 +1,37 @@
 const Model = require('./Model');
 
-class GigReview extends Model {
+class UserReview extends Model {
     static get tableName() {
-        return 'gigReviews';
+        return 'userReviews';
     }
+
     static get jsonSchema() {
         return {
             type: 'object',
             required: ['rating'],
             properties: {
-                reviewBody: { type:'string' },
-                rating: { type:[ 'integer', 'string'] },
+                rating: {type: ['integer', 'string']},
+                reviewBody: {type: 'string'},
             }
         }
     }
+
     static get relationMappings() {
         const { User, Gig } = require('./index.js')
+
             return {
                 user: {
                     relation: Model.BelongsToOneRelation,
                     modelClass: User,
-                    join: { 
-                        from: 'gigReviews.userId', 
-                        to: 'users.id' 
+                    join: {
+                        from: 'userReviews.userId',
+                        to: 'users.Id'
                     },
                 gig: {
                     relation: Model.BelongsToOneRelation,
                     modelClass: Gig,
                     join: {
-                        from: 'gigReviews.gigId',
+                        from: 'userReviews.userId',
                         to: 'gigs.id'
                     }
                 }
@@ -37,4 +40,4 @@ class GigReview extends Model {
     }
 }
 
-module.exports = GigReview;
+module.exports = UserReview;

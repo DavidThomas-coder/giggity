@@ -2,5 +2,6 @@
 const User = require("./User.js")
 const Gig = require("./Gig.js")
 const GigReview = require("./GigReview.js")
+const UserReview = require("./UserReview.js")
 
-module.exports = {User, Gig, GigReview};
+module.exports = {User, Gig, GigReview, UserReview};
