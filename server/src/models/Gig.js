@@ -15,7 +15,7 @@ class Gig extends Model {
                 location: { type:'string' },
                 datePosted: { type:'string' },
                 gigExpirationDate: { type:'string' },
-                compensation: { type:'integer' },
+                compensation: { type:['integer', 'string'] },
                 gigCategory: { type:'string' }
         }
     }
