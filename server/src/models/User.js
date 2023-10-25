@@ -44,6 +44,39 @@ class User extends uniqueFunc(Model) {
 
     return serializedJson;
   }
-}
+  static get relationMappings() {
+    const { Gig, GigReview, UserReview } = require("./index.js");
 
+      return {
+        gigs: {
+          relation: Model.ManyToManyRelation,
+          modelClass: Gig,
+          join: {
+            from: 'users.id',
+            through: {
+              from: 'applications.userId',
+              to: 'applications.gigId',
+            },
+            to: 'gigs.id'
+          }
+        },
+        gigReviews: {
+          relation: Model.HasManyRelation,
+          modelClass: GigReview,
+          join: { 
+            from: 'users.id',
+            to: 'gigReviews.userId'
+        }
+      },
+      UserReview: {
+        relation: Model.HasManyRelation,
+        modelClass: UserReview,
+        join: {
+          from: 'users.id',
+          to: 'userReviews.userId'
+        }
+      }
+    }
+  }
+}
 module.exports = User;
