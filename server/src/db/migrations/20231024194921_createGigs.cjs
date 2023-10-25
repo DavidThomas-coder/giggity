@@ -8,7 +8,7 @@
 exports.up = async (knex) => {
     return knex.schema.createTable('gigs', (table) => {
         table.bigIncrements('id')
-        table.string('jobName').notNullable()
+        table.string('gigName').notNullable()
         table.text('description').notNullable()
         table.string('location').notNullable()
         table.string('datePosted').notNullable()
