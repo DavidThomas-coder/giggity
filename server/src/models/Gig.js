@@ -24,28 +24,43 @@ class Gig extends Model {
     static get relationMappings() {
         const { User, Application } = require('./index.js')
 
-        return {
-            users: {
-                relation: Model.ManyToManyRelation,
-                modelClass: User,
-                join: {
-                    from: 'gigs.id',
-                    through: {
-                        from: 'applications.gigId',
-                        to: 'applications.userId',
-                    },
-                    to: 'users.id'
+            return {
+                users: {
+                    relation: Model.ManyToManyRelation,
+                    modelClass: User,
+                    join: {
+                        from: 'gigs.id',
+                        through: {
+                            from: 'applications.gigId',
+                            to: 'applications.userId',
+                        },
+                        to: 'users.id'
+                    }
+                },
+                applications: {
+                    relation: Model.HasManyRelation,
+                    modelClass: Application,
+                    join: {
+                        from: 'gigs.id',
+                        to: 'applications.gigId'
+                    }
+                },
+                userReviews: {
+                    relation: Model.HasManyRelation,
+                    modelClass: UserReview,
+                    join: {
+                        from: 'gigs.id',
+                        to: 'userReviews.gigId'
                 }
             },
-            applications: {
-                relation: Model.HasManyRelation,
-                modelClass: Application,
-                join: {
-                    from: 'gigs.id',
-                    to: 'applications.gigId'
+                gigReviews: {
+                    relation: Model.HasManyRelation,
+                    modelClass: GigReview,
+                    join: {
+                        from: 'gigs.id',
+                        to: 'gigReviews.gigId'
                 }
             }
-
         }
     }
 }
