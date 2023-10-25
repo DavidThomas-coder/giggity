@@ -8,9 +8,18 @@ class Gig extends Model {
     static get jsonSchema() {
         return {
             type: 'object',
-            required: ['gigName', 'description', 'location', 'datePosted', 'gigExpirationDate', 'compensation', 'gigCategory']
+            required: ['gigName', 'description', 'location', 'datePosted', 'gigExpirationDate', 'compensation', 'gigCategory'],
+            properties: {
+                gigName: { type:'string' },
+                description: { type:'string' },
+                location: { type:'string' },
+                datePosted: { type:'string' },
+                gigExpirationDate: { type:'string' },
+                compensation: { type:'integer' },
+                gigCategory: { type:'string' }
         }
     }
+}
 
     static get relationMappings() {
         const { User, Application } = require('./index.js')
