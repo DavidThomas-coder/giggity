@@ -15,7 +15,8 @@ exports.up = async (knex) => {
         table.integer("phoneNumber").notNullable()
         table.string("imageUrl")
         table.text("resumeFile")
-        table.text("bio")
+        table.string("bio").notNullable()
+        table.text("skills").notNullable()
         table.text("recentGig1")
         table.text("recentGig2")
         table.text("recentGig3")
@@ -25,4 +26,20 @@ exports.up = async (knex) => {
 /**
  * @param {Knex} knex
  */
-exports.down = (knex) => {}
+exports.down = (knex) => {
+    return knex.schema.table("users", (table) => {
+        table.dropColumn("address")
+        table.dropColumn("city")
+        table.dropColumn("state")
+        table.dropColumn("zip")
+        table.dropColumn("country")
+        table.dropColumn("phoneNumber")
+        table.dropColumn("imageUrl")
+        table.dropColumn("resumeFile")
+        table.dropColumn("bio")
+        table.dropColumn("skills")
+        table.dropColumn("recentGig1")
+        table.dropColumn("recentGig2")
+        table.dropColumn("recentGig3")
+    })
+}
