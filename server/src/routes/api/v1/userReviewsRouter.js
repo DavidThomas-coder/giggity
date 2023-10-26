@@ -8,6 +8,8 @@ userReviewsRouter.get('/', async (req, res) => {
     try {
         const userReviews = await UserReview.query()
         res.status(200).json({ userReviews: userReviews })
+
+    } catch (error) {
+        
     }
-}
-    )
+})
