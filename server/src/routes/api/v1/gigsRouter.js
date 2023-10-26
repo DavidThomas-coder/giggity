@@ -7,9 +7,11 @@ const gigsRouter = new express.Router();
 gigsRouter.get("/", async (req, res) => {
     try {
         const gigs = await Gig.query()
-        res.status(200).json(gigs)
+        res.status(200).json({ gigs: gigs })
     } catch (error) {
         console.log(error)
         res.status(500).json({errors: error.message})
     }
 })
+
+export default gigsRouter;
