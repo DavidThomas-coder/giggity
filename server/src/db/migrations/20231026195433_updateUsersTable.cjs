@@ -12,6 +12,11 @@ exports.up = async (knex) => {
         table.string("state").notNullable()
         table.integer("zip").notNullable()
         table.string("country").notNullable()
+        table.text("resume")
+        table.text("bio")
+        table.text("recentGig1")
+        table.text("recentGig2")
+        table.text("recentGig3")
     })
 }
 
