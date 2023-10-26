@@ -6,11 +6,12 @@ const SignInForm = () => {
   const [userPayload, setUserPayload] = useState({ email: "", password: "" });
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const [errors, setErrors] = useState({});
+  const [credentialsErrors, setCredentialsErrors] = useState("")
 
   const validateInput = (payload) => {
     setErrors({});
     const { email, password } = payload;
-    const emailRegexp = config.validation.email.regexp;
+    const emailRegexp = config.validation.email.regexp.emailRegex;
     let newErrors = {};
     if (!email.match(emailRegexp)) {
       newErrors = {
@@ -27,30 +28,39 @@ const SignInForm = () => {
     }
 
     setErrors(newErrors);
+    if (Object.keys(newErrors).length === 0) {
+      return true
+    }
+    return false
   };
 
   const onSubmit = async (event) => {
     event.preventDefault()
-    validateInput(userPayload)
-    try {
-      if (Object.keys(errors).length === 0) {
-        const response = await fetch("/api/v1/user-sessions", {
-          method: "post",
-          body: JSON.stringify(userPayload),
-          headers: new Headers({
-            "Content-Type": "application/json",
+    if (validateInput(userPayload)) {
+      try {
+        if (Object.keys(errors).length === 0) {
+          const response = await fetch("/api/v1/user-sessions", {
+            method: "post",
+            body: JSON.stringify(userPayload),
+            headers: new Headers({
+              "Content-Type": "application/json",
+            })
           })
-        })
-        if(!response.ok) {
-          const errorMessage = `${response.status} (${response.statusText})`
-          const error = new Error(errorMessage)
-          throw(error)
+          if(!response.ok) {
+            if (response.status === 401) {
+              const serverErrors = await response.json()
+              setCredentialsErrors(serverErrors.message)
+            }
+            const errorMessage = `${response.status} (${response.statusText})`
+            const error = new Error(errorMessage)
+            throw(error)
+          }
+          const userData = await response.json()
+          setShouldRedirect(true)
         }
-        const userData = await response.json()
-        setShouldRedirect(true)
+      } catch(err) {
+        console.error(`Error in fetch: ${err.message}`)
       }
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
     }
   }
 
@@ -66,9 +76,10 @@ const SignInForm = () => {
   }
 
   return (
-    <div className="grid-container" onSubmit={onSubmit}>
+    <div className="grid-container">
       <h1>Sign In</h1>
-      <form>
+      {credentialsErrors ? <p className="callout alert">{credentialsErrors}</p> : null}
+      <form onSubmit={onSubmit}>
         <div>
           <label>
             Email
