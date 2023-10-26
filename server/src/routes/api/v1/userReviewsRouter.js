@@ -10,6 +10,7 @@ userReviewsRouter.get('/', async (req, res) => {
         res.status(200).json({ userReviews: userReviews })
 
     } catch (error) {
+        console.error(error);
         
     }
 })
