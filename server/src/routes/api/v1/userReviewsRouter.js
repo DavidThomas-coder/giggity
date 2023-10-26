@@ -11,6 +11,8 @@ userReviewsRouter.get('/', async (req, res) => {
 
     } catch (error) {
         console.error(error);
-        
+        res.status(400).json({ errors: error.message });
     }
 })
+
+export default userReviewsRouter;
