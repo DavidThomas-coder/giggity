@@ -45,7 +45,12 @@ class UserSeeder {
         ]
 
         for (const singleUser of userData) {
-            const currentUser = await User.query().findOne({name: singleUser.name})
+            const currentUser = await User.query().findOne({username: singleUser.username})
+            if (!currentUser) {
+                await User.query().insert(singleUser)
+            }
         }
     }
 }
+
+export default UserSeeder
