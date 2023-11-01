@@ -8,6 +8,9 @@ class Seeder {
     console.log("Seeding users...")
     await UserSeeder.seed()
 
+    console.log("Seeding gigs...")
+    await GigSeeder.seed()
+
     console.log("Done!")
     await connection.destroy()
   }
