@@ -5,6 +5,8 @@ class UserSeeder {
         const userData = [
             {
                 username: "RipNasty",
+                firstName: "David",
+                lastName: "Thomas",
                 email: "david@david.com",
                 password: "123",
                 address: "66 Big Palace Road",
@@ -18,6 +20,8 @@ class UserSeeder {
             },
             {
                 username: "Todd",
+                firstName: "Todd",
+                lastName: "Garrison",
                 email: "todd@todd.com",
                 password: "123",
                 address: "67 Big Palace Road",
@@ -31,6 +35,8 @@ class UserSeeder {
             },
             {
                 username: "Jimmy",
+                firstName: "Solomon",
+                lastName: "Montagno",
                 email: "jimmy@jimmyjohns.com",
                 password: "123",
                 address: "68 Big Palace Road",
