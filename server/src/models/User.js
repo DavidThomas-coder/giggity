@@ -40,6 +40,10 @@ class User extends uniqueFunc(Model) {
         bio: { type: 'text' },
         skills: { type: 'text' },
         imageUrl: { type: 'string' },
+        resumeFile: { type: 'text' },
+        recentGig1: { type: 'text' },
+        recentGig2: { type: 'text' },
+        recentGig3: { type: 'text' },
       },
     };
   }
