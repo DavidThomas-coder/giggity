@@ -12,7 +12,7 @@ class UserSeeder {
                 state: "MA",
                 zip: "02138",
                 country: "USA",
-                phoneNumber: "555-555-5555",
+                phoneNumber: "5555555555",
                 bio: "I am the best at the moment",
                 skills: "Welding, Cooking, Slathering"
             },
@@ -25,7 +25,7 @@ class UserSeeder {
                 state: "MA",
                 zip: "02138",
                 country: "USA",
-                phoneNumber: "555-555-5555",
+                phoneNumber: "5555555555",
                 bio: "Cooler than that guy",
                 skills: "Kewl"
             },
@@ -38,7 +38,7 @@ class UserSeeder {
                 state: "MA",
                 zip: "02138",
                 country: "USA",
-                phoneNumber: "555-555-5555",
+                phoneNumber: "5555555555",
                 bio: "Slightly late but will get the gig done",
                 skills: "Arriving late and baking bread"
             }
