@@ -12,7 +12,7 @@ exports.up = async (knex) => {
         table.string("state").notNullable()
         table.integer("zip").notNullable()
         table.string("country").notNullable()
-        table.integer("phoneNumber").notNullable()
+        table.bigInteger("phoneNumber").notNullable()
         table.string("imageUrl")
         table.text("resumeFile")
         table.string("bio").notNullable()
