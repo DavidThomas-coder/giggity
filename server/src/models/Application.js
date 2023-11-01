@@ -22,7 +22,19 @@ class Application extends Model {
             gigs: {
                 relation: Model.BelongsToOneRelation,
                 modelClass: Gig,
-                join: []
+                join: {
+                    from: 'applications.gigId',
+                    to: 'gigs.id',
+                }
+            },
+
+            users: {
+                relation: Model.BelongsToOneRelation,
+                modelClass: User,
+                join: {
+                    from: 'applications.userId',
+                    to: 'users.id'
+                }
             }
         }
     }
