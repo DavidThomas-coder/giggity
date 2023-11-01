@@ -22,7 +22,7 @@ class Gig extends Model {
 }
 
     static get relationMappings() {
-        const { User, Application } = require('./index.js')
+        const { User, Application, UserReview, GigReview } = require('./index.js')
 
             return {
                 users: {
