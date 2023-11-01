@@ -33,7 +33,10 @@ class User extends uniqueFunc(Model) {
         cryptedPassword: { type: "string" },
         address: { type: 'string' },
         city: { type: 'string' },
-        
+        state: { type: 'string' },
+        zip: { type: ['integer', 'string'] },
+        country: { type: 'string' },
+
       },
     };
   }
