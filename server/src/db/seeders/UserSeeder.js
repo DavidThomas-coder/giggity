@@ -14,7 +14,7 @@ class UserSeeder {
                 country: "USA",
                 phoneNumber: "555-555-5555",
                 bio: "I am the best at the moment",
-                skills: ["welding", "cooking", "dressage", "slathering"]
+                skills: "Welding, Cooking, Slathering"
             },
             {
                 username: "Todd",
@@ -27,7 +27,7 @@ class UserSeeder {
                 country: "USA",
                 phoneNumber: "555-555-5555",
                 bio: "Cooler than that guy",
-                skills: ["kewl"]
+                skills: "Kewl"
             },
             {
                 username: "Jimmy",
@@ -40,7 +40,7 @@ class UserSeeder {
                 country: "USA",
                 phoneNumber: "555-555-5555",
                 bio: "Slightly late but will get the gig done",
-                skills: ["arriving late", "baking bread", "cooking", "dressing", "eating"]
+                skills: "Arriving late and baking bread"
             }
         ]
 
