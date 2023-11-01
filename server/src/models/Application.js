@@ -8,7 +8,10 @@ class Application extends Model {
     static get jsonSchema() {
         return {
             type: 'object',
-            required: ['applicationBody']
+            required: ['applicationBody'],
+            properties: {
+                applicationBody: { type: 'string' }
+            }
         }
     }
 }
