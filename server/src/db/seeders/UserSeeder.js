@@ -44,6 +44,8 @@ class UserSeeder {
             }
         ]
 
-        
+        for (const singleUser of userData) {
+            const currentUser = await User.query().findOne({name: singleUser.name})
+        }
     }
 }
