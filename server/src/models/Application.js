@@ -8,9 +8,9 @@ class Application extends Model {
     static get jsonSchema() {
         return {
             type: 'object',
-            required: {
-                
-            }
+            required: ['applicationBody']
         }
     }
 }
+
+module.exports = Application
