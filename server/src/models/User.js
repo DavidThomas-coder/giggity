@@ -36,7 +36,10 @@ class User extends uniqueFunc(Model) {
         state: { type: 'string' },
         zip: { type: ['integer', 'string'] },
         country: { type: 'string' },
-
+        phoneNumber: { type: ['integer', 'string'] },
+        bio: { type: 'text' },
+        skills: { type: 'text' },
+        imageUrl: { type: 'string' },
       },
     };
   }
