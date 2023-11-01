@@ -14,6 +14,18 @@ class Application extends Model {
             }
         }
     }
+
+    static get relationMappings() {
+        const { User, Gig } = require('./index.js');
+
+        return {
+            gigs: {
+                relation: Model.BelongsToOneRelation,
+                modelClass: Gig,
+                join: []
+            }
+        }
+    }
 }
 
 module.exports = Application
