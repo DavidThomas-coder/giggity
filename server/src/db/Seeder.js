@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { connection } from "../boot.js"
 import UserSeeder from "./seeders/UserSeeder.js"
-
+import GigSeeder from "./seeders/GigSeeder.js"
 class Seeder {
   static async seed() {
     // include individual seed commands here
