@@ -25,7 +25,7 @@ class UserReview extends Model {
                     modelClass: User,
                     join: {
                         from: 'userReviews.userId',
-                        to: 'users.Id'
+                        to: 'users.id'
                     },
                 gig: {
                     relation: Model.BelongsToOneRelation,
