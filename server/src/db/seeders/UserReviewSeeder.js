@@ -2,6 +2,9 @@ import { User, Gig, UserReview } from "../../models/index.js";
 
 class UserReviewSeeder {
     static async seed() {
+        const user1David = await User.query().findById(1)
+        const user2Todd = await User.query().findById(2)
+        const user3Solomon = await User.query().findById(3)
 
         const userReviewData = [
             {
