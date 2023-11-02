@@ -11,5 +11,9 @@ class GigSerializer {
             'gigCategory'
         ]
         let serializedGig = {}
+
+        for (const attribute of allowedAttributes) {
+            serializedGig[attribute] = gig[attribute]
+        }
     }
 }
