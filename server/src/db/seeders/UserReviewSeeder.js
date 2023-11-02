@@ -6,9 +6,9 @@ class UserReviewSeeder {
         // const user2Todd = await User.query().findById(2)
         // const user3Solomon = await User.query().findById(3)
 
-        const gig1 = await Gig.query().findOne({gigId: 1})
-        const gig2 = await Gig.query().findOne({gigId: 2})
-        const gig3 = await Gig.query().findOne({gigId: 3})
+        const gig1 = await Gig.query().findById(1)
+        const gig2 = await Gig.query().findById(2)
+        const gig3 = await Gig.query().findById(3)
 
         const userReviewData = [
             {
