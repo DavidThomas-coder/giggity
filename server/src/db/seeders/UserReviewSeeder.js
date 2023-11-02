@@ -2,28 +2,32 @@ import { User, Gig, UserReview } from "../../models/index.js";
 
 class UserReviewSeeder {
     static async seed() {
-        const user1David = await User.query().findById(1)
-        const user2Todd = await User.query().findById(2)
-        const user3Solomon = await User.query().findById(3)
+        // const user1David = await User.query().findById(1)
+        // const user2Todd = await User.query().findById(2)
+        // const user3Solomon = await User.query().findById(3)
+
+        const gig1 = await Gig.query().findOne({gigId: 1})
+        const gig2 = await Gig.query().findOne({gigId: 2})
+        const gig3 = await Gig.query().findOne({gigId: 3})
 
         const userReviewData = [
             {
                 reviewBody: "David slathered everywhere it ruled",
                 rating: "5",
-                gigId: 2,
-                userId: user1David.id
+                gigId: gig2.id,
+                userId: 1
             },
             {
                 reviewBody: "Todd is so ripped ez",
                 rating: "1",
-                gigId: 1,
-                userId: user2Todd.id
+                gigId: gig1.id,
+                userId: 2
             },
             {
                 reviewBody: "Why is Solomon's name Jimmy",
                 rating: "3",
-                gigId: 3,
-                userId: user3Solomon.id
+                gigId: gig3.id,
+                userId: 3
             }
         ]
 
