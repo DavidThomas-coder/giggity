@@ -3,6 +3,7 @@ import { connection } from "../boot.js"
 import UserSeeder from "./seeders/UserSeeder.js"
 import GigSeeder from "./seeders/GigSeeder.js"
 import UserReviewSeeder from "./seeders/UserReviewSeeder.js"
+import GigReviewSeeder from "./seeders/GigReviewSeeder.js"
 
 
 class Seeder {
@@ -16,6 +17,9 @@ class Seeder {
 
     console.log("Seeding user reviews...")
     await UserReviewSeeder.seed()
+
+    console.log("Seeding gig reviews...")
+    await GigReviewSeeder.seed()
 
     console.log("Done!")
     await connection.destroy()
