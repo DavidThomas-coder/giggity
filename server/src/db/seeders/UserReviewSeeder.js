@@ -19,19 +19,19 @@ class UserReviewSeeder {
                 reviewBody: "David slathered everywhere it ruled",
                 rating: "5",
                 gigId: gig2.id,
-                userId: 1
+                userId: user1.id
             },
             {
                 reviewBody: "Todd is so ripped ez",
                 rating: "1",
                 gigId: gig1.id,
-                userId: 2
+                userId: user2.id
             },
             {
                 reviewBody: "Why is Solomon's name Jimmy",
                 rating: "3",
                 gigId: gig3.id,
-                userId: 3
+                userId: user3.id
             }
         ]
 
