@@ -10,6 +10,10 @@ class UserReviewSeeder {
         const gig2 = await Gig.query().findById(2)
         const gig3 = await Gig.query().findById(3)
 
+        const user1 = await User.query().findById(1)
+        const user2 = await User.query().findById(2)
+        const user3 = await User.query().findById(3)
+
         const userReviewData = [
             {
                 reviewBody: "David slathered everywhere it ruled",
