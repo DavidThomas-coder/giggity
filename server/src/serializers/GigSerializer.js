@@ -15,5 +15,8 @@ class GigSerializer {
         for (const attribute of allowedAttributes) {
             serializedGig[attribute] = gig[attribute]
         }
+        return serializedGig
     }
 }
+
+export default GigSerializer
