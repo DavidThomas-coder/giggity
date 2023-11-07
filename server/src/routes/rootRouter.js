@@ -5,8 +5,6 @@ import clientRouter from "./clientRouter.js";
 import gigReviewsRouter from "./api/v1/gigReviewsRouter.js";
 import gigsRouter from "./api/v1/gigsRouter.js";
 import userReviewsRouter from "./api/v1/userReviewsRouter.js";
-import router from "./clientRouter.js";
-
 
 const rootRouter = new express.Router();
 rootRouter.use("/", clientRouter);
