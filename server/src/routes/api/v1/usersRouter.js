@@ -1,6 +1,6 @@
 import express from "express";
 import { ValidationError } from "objection";
-import UserSerializer from "../serializers/UserSerializer.js";
+import UserSerializer from "../../../serializers/UserSerializer.js";
 import { User } from "../../../models/index.js";
 
 const usersRouter = new express.Router();

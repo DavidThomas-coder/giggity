@@ -1,12 +1,10 @@
 import express from "express";
-import userSessionsRouter from "./userSessionsRouter.js";
+import userSessionsRouter from "./api/v1/userSessionsRouter.js";
 import usersRouter from "./api/v1/usersRouter.js";
 import clientRouter from "./clientRouter.js";
 import gigReviewsRouter from "./api/v1/gigReviewsRouter.js";
 import gigsRouter from "./api/v1/gigsRouter.js";
 import userReviewsRouter from "./api/v1/userReviewsRouter.js";
-import router from "./clientRouter.js";
-
 
 const rootRouter = new express.Router();
 rootRouter.use("/", clientRouter);
