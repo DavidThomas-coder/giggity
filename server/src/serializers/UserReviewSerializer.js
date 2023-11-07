@@ -1,5 +1,5 @@
 class UserReviewSerializer {
-    static showuserReviewDetails(userReview) {
+    static showUserReviewDetails(userReview) {
         const allowedAttributes = [
             "reviewBody",
             "rating"
