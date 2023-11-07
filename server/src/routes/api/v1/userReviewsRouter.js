@@ -9,7 +9,7 @@ userReviewsRouter.get('/', async (req, res) => {
     try {
         const userReviews = await UserReview.query()
         const serializedUserReview = await UserReviewSerializer.showUserReviewDetails(userReviews)
-        res.status(200).json({ userReviews: userReviews })
+        res.status(200).json({ userReviews: serializedUserReview })
 
     } catch (error) {
         console.error(error);
