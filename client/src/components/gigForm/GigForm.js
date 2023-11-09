@@ -23,6 +23,9 @@ const GigForm = () => {
 
     }
 
+    useEffect(() => {
+        fetchGigs();
+    }, []);
 
     return (
         <div>
