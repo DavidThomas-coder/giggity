@@ -15,8 +15,23 @@ const GigForm = () => {
         gigCategory: '',
     })
 
-    const handleGigSubmit = () => {
+    const handleGigSubmit = async (event) => {
+        event.preventDefault()
 
+        try {
+            console.log('NewGig:', newGig)
+
+            const response = await fetch('/api/v1/gigs', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify({gigName: newGig.gigName})
+            })
+
+        } catch (error) {
+
+        }
     }
 
     const handleGigChange = () => {
