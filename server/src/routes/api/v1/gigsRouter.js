@@ -16,4 +16,13 @@ gigsRouter.get("/", async (req, res) => {
     }
 })
 
+gigsRouter.post("/", async (req, res) => {
+    try {
+        const 
+    } catch (error) {
+        console.log('Error:', error)
+        res.status(500).json({ errors: error.message})
+    }
+})
+
 export default gigsRouter;
