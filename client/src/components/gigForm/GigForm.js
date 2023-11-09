@@ -54,8 +54,8 @@ const GigForm = () => {
                     Duration:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="duration"
+                            value={newGig.duration}
                             onChange={handleGigChange}
                         />
                 </label>
@@ -63,8 +63,8 @@ const GigForm = () => {
                     Compensation:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="compensation"
+                            value={newGig.compensation}
                             onChange={handleGigChange}
                         />
                 </label>
@@ -72,8 +72,8 @@ const GigForm = () => {
                     Category:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="gigCategory"
+                            value={newGig.gigCategory}
                             onChange={handleGigChange}
                         />
                 </label>
