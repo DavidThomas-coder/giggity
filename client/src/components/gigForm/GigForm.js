@@ -66,7 +66,7 @@ const GigForm = () => {
     const handleGigChange = (event) => {
         setNewGig({
             ...newGig,
-            [event.currentTarget.name]: event.currentTarget.value
+            [fieldName]: event.target.value,
         })
     }
 
@@ -77,15 +77,11 @@ const GigForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <TextField label="Name:">
-                    Name:
-                        <input
-                            type="text"
-                            name="gigName"
-                            value={newGig.gigName}
-                            onChange={handleGigChange}
-                        />
-                </TextField>
+            <TextField
+                        label="Name"
+                        value={newGig.gigName}
+                        onChange={(e) => handleGigChange(e, 'gigName')}
+                    />
                 <label>
                     Description:
                         <input
