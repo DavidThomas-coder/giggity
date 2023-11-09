@@ -15,7 +15,7 @@ const GigForm = () => {
         gigCategory: '',
     })
 
-    const handleSubmit = () => {
+    const handleGigSubmit = () => {
 
     }
 
@@ -29,7 +29,7 @@ const GigForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleGigSubmit}>
                 <TextField label="Name:">
                     Name:
                         <input
