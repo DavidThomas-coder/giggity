@@ -25,7 +25,7 @@ const GigForm = () => {
                 console.error('Failed to fetch gigs:', response.statusText)
             }
         } catch (error) {
-            
+            console.error('Error fetching gigs:', error)
         }
     }
 
