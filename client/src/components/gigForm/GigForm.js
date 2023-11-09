@@ -82,24 +82,16 @@ const GigForm = () => {
                         value={newGig.gigName}
                         onChange={(e) => handleGigChange(e, 'gigName')}
                     />
-                <label>
-                    Description:
-                        <input
-                            type="text"
-                            name="description"
+                <TextField
+                            label="description"
                             value={newGig.description}
                             onChange={handleGigChange}
                         />
-                </label>
-                <label>
-                    Location:
-                        <input
-                            type="text"
-                            name="location"
+                <TextField
+                            label="location"
                             value={newGig.location}
                             onChange={handleGigChange}
                         />
-                </label>
                 <label>
                     Today's Date:
                         <input
