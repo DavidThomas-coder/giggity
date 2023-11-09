@@ -16,4 +16,26 @@ gigsRouter.get("/", async (req, res) => {
     }
 })
 
+gigsRouter.post("/", async (req, res) => {
+    try {
+        const { gigName, description, location, datePosted, gigExpirationData, duration, compensation, gigCategory } = req.body
+        const newGig = await Gig.query().insert({
+            gigName, 
+            description, 
+            location, 
+            datePosted, 
+            gigExpirationData, 
+            duration, 
+            compensation, 
+            gigCategory,
+        })
+
+        const serializedGig = await GigSerializer.showGigDetails(newGig)
+        res.status(201).json({ gig: serializedGig })
+    } catch (error) {
+        console.log('Error:', error)
+        res.status(500).json({ errors: error.message})
+    }
+})
+
 export default gigsRouter;
