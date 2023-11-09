@@ -9,7 +9,10 @@ const GigForm = () => {
         description: '',
         location:'',
         datePosted: '',
-        
+        gigExpiration: '',
+        duration: '',
+        compensation: '',
+        gigCategory: '',
     })
 
     const handleSubmit = () => {
