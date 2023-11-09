@@ -4,6 +4,10 @@ import { TextField } from "@mui/material"
 
 const GigForm = () => {
 
+    const [newGig, setNewGig] = useState({
+        
+    })
+
     const handleSubmit = () => {
 
     }
