@@ -14,6 +14,7 @@ const GigForm = () => {
         compensation: '',
         gigCategory: '',
     })
+    const [gigs, setGigs] = useState([])
 
     const fetchGigs = async () => {
         try {
