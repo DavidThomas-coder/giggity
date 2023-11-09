@@ -24,7 +24,7 @@ const GigForm = () => {
                         />
                 </label>
                 <label>
-                    
+                    Location:
                         <input
                             type="text"
                             name="gigName"
@@ -33,7 +33,7 @@ const GigForm = () => {
                         />
                 </label>
                 <label>
-                    Post A Gig Here:
+                    Today's Date:
                         <input
                             type="text"
                             name="gigName"
@@ -42,7 +42,7 @@ const GigForm = () => {
                         />
                 </label>
                 <label>
-                    Post A Gig Here:
+                    Expiration Date:
                         <input
                             type="text"
                             name="gigName"
@@ -51,7 +51,7 @@ const GigForm = () => {
                         />
                 </label>
                 <label>
-                    Post A Gig Here:
+                    Duration:
                         <input
                             type="text"
                             name="gigName"
@@ -60,7 +60,7 @@ const GigForm = () => {
                         />
                 </label>
                 <label>
-                    Post A Gig Here:
+                    Compensation:
                         <input
                             type="text"
                             name="gigName"
@@ -69,7 +69,7 @@ const GigForm = () => {
                         />
                 </label>
                 <label>
-                    Post A Gig Here:
+                    Category:
                         <input
                             type="text"
                             name="gigName"
