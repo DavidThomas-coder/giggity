@@ -8,6 +8,8 @@ const GigForm = () => {
         gigName: '',
         description: '',
         location:'',
+        datePosted: '',
+        
     })
 
     const handleSubmit = () => {
