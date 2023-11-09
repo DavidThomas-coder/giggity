@@ -5,7 +5,9 @@ import { TextField } from "@mui/material"
 const GigForm = () => {
 
     const [newGig, setNewGig] = useState({
-        
+        gigName: '',
+        description: '',
+        location:'',
     })
 
     const handleSubmit = () => {
