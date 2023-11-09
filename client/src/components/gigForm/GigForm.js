@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Button from '@mui/material/Button'
+import { TextField } from "@mui/material"
 
 const GigForm = () => {
 
@@ -15,16 +16,16 @@ const GigForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label>
+                <TextField label="Name:">
                     Name:
                         <input
                             type="text"
                             name="gigName"
-                            value={newGig.gigName}
+                            // value={newGig.gigName}
                             onChange={handleGigChange}
                         />
-                </label>
-                <label>
+                </TextField>
+                {/* <label>
                     Description:
                         <input
                             type="text"
@@ -86,7 +87,7 @@ const GigForm = () => {
                             value={newGig.gigCategory}
                             onChange={handleGigChange}
                         />
-                </label>
+                </label> */}
                 <Button variant="contained" type="submit">Submit Gig</Button>
             </form>
         </div>
