@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 const GigForm = () => {
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Post A Gig Here:
                         <input
