@@ -9,7 +9,7 @@ const GigForm = () => {
         description: '',
         location:'',
         datePosted: '',
-        gigExpiration: '',
+        gigExpirationDate: '',
         duration: '',
         compensation: '',
         gigCategory: '',
