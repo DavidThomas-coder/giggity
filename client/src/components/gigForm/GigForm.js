@@ -15,9 +15,7 @@ const GigForm = () => {
         gigCategory: '',
     })
 
-    const handleGigSubmit = async (event) => {
-        event.preventDefault()
-
+    const postGig = async () => {
         try {
             console.log('NewGig:', newGig)
 
@@ -29,13 +27,23 @@ const GigForm = () => {
                 body: JSON.stringify({gigName: newGig.gigName})
             })
 
-        } catch (error) {
+            if (response.ok) {
+                const body = await response.json()
+                const { id } = body.gig
+                setGigId(id)
+                setRedirect(true)
+            } else {
+                console.log('failed to add Gig:', response.statusText)
+            }
 
+        } catch (error) {
+            console.log('error in post:', error.message)
         }
     }
 
-    const handleGigChange = () => {
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        postGig()
     }
 
     useEffect(() => {
@@ -44,7 +52,7 @@ const GigForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleGigSubmit}>
+            <form onSubmit={handleSubmit}>
                 <TextField label="Name:">
                     Name:
                         <input
