@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 import { TextField } from "@mui/material"
 
 const GigForm = () => {
-
+    
     const [newGig, setNewGig] = useState({
         gigName: '',
         description: '',
@@ -14,6 +14,21 @@ const GigForm = () => {
         compensation: '',
         gigCategory: '',
     })
+
+    const fetchGigs = async () => {
+        try {
+            const response = await fetch('api/v1/gigs')
+            if (response.ok) {
+                const data = await response.json()
+                setGigs(data.gigs)
+            } else {
+                console.error('Failed to fetch gigs:', response.statusText)
+            }
+        } catch (error) {
+            
+        }
+    }
+
 
     const postGig = async () => {
         try {
