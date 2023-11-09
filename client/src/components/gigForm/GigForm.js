@@ -18,8 +18,8 @@ const GigForm = () => {
                     Description:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="description"
+                            value={newGig.description}
                             onChange={handleGigChange}
                         />
                 </label>
@@ -27,8 +27,8 @@ const GigForm = () => {
                     Location:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="location"
+                            value={newGig.location}
                             onChange={handleGigChange}
                         />
                 </label>
@@ -36,8 +36,8 @@ const GigForm = () => {
                     Today's Date:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="datePosted"
+                            value={newGig.datePosted}
                             onChange={handleGigChange}
                         />
                 </label>
@@ -45,8 +45,8 @@ const GigForm = () => {
                     Expiration Date:
                         <input
                             type="text"
-                            name="gigName"
-                            value={newGig.gigName}
+                            name="gigExpirationDate"
+                            value={newGig.gigExpirationDate}
                             onChange={handleGigChange}
                         />
                 </label>
