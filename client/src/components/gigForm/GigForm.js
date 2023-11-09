@@ -58,6 +58,15 @@ const GigForm = () => {
                             onChange={handleGigChange}
                         />
                 </label>
+                <label>
+                    Post A Gig Here:
+                        <input
+                            type="text"
+                            name="gigName"
+                            value={newGig.gigName}
+                            onChange={handleGigChange}
+                        />
+                </label>
             </form>
         </div>
     )
