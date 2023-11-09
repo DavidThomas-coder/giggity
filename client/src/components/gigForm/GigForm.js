@@ -63,7 +63,7 @@ const GigForm = () => {
         postGig()
     }
 
-    const handleGigChange = (event) => {
+    const handleGigChange = (event, fieldName) => {
         setNewGig({
             ...newGig,
             [fieldName]: event.target.value,
