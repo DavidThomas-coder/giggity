@@ -15,6 +15,7 @@ const GigForm = () => {
         gigCategory: '',
     })
     const [gigs, setGigs] = useState([])
+    const [gigId, setGigId] = useState(null)
 
     const fetchGigs = async () => {
         try {
