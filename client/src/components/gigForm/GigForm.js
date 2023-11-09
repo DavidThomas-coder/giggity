@@ -102,33 +102,21 @@ const GigForm = () => {
                             value={newGig.gigExpirationDate}
                             onChange={(e) => handleGigChange(e, 'gigExpirationDate')}
                         />
-                <label>
-                    Duration:
-                        <input
-                            type="text"
-                            name="duration"
+                <TextField
+                            label="Duration"
                             value={newGig.duration}
-                            onChange={handleGigChange}
+                            onChange={(e) => handleGigChange(e, 'duration')}
                         />
-                </label>
-                <label>
-                    Compensation:
-                        <input
-                            type="text"
-                            name="compensation"
+                <TextField
+                            label="Compensation"
                             value={newGig.compensation}
-                            onChange={handleGigChange}
+                            onChange={(e) => handleGigChange(e, 'compensation')}
                         />
-                </label>
-                <label>
-                    Category:
-                        <input
-                            type="text"
-                            name="gigCategory"
+                <TextField
+                            name="Gig Category"
                             value={newGig.gigCategory}
-                            onChange={handleGigChange}
+                            onChange={(e) => handleGigChange(e, 'gigCategory')}
                         />
-                </label>
                 <Button variant="contained" type="submit">Submit Gig</Button>
             </form>
         </div>
