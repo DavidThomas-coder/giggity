@@ -113,7 +113,7 @@ const GigForm = () => {
                             onChange={(e) => handleGigChange(e, 'compensation')}
                         />
                 <TextField
-                            name="Gig Category"
+                            label="Gig Category"
                             value={newGig.gigCategory}
                             onChange={(e) => handleGigChange(e, 'gigCategory')}
                         />
