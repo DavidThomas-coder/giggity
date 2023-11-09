@@ -82,3 +82,5 @@ const GigForm = () => {
         </div>
     )
 }
+
+export default GigForm
