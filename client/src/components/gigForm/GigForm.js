@@ -11,7 +11,7 @@ const GigForm = () => {
 
     }
 
-    
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
