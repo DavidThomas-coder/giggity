@@ -46,6 +46,13 @@ const GigForm = () => {
         postGig()
     }
 
+    const handleGigChange = (event) => {
+        setNewGig({
+            ...newGig,
+            [event.currentTarget.name]: event.currentTarget.value
+        })
+    }
+
     useEffect(() => {
         fetchGigs();
     }, []);
@@ -58,11 +65,11 @@ const GigForm = () => {
                         <input
                             type="text"
                             name="gigName"
-                            // value={newGig.gigName}
+                            value={newGig.gigName}
                             onChange={handleGigChange}
                         />
                 </TextField>
-                {/* <label>
+                <label>
                     Description:
                         <input
                             type="text"
@@ -124,7 +131,7 @@ const GigForm = () => {
                             value={newGig.gigCategory}
                             onChange={handleGigChange}
                         />
-                </label> */}
+                </label>
                 <Button variant="contained" type="submit">Submit Gig</Button>
             </form>
         </div>
