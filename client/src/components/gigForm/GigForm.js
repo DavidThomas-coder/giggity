@@ -90,7 +90,7 @@ const GigForm = () => {
                 <TextField
                             label="location"
                             value={newGig.location}
-                            onChange={(e) => handleGigChange(e, 'Location')}
+                            onChange={(e) => handleGigChange(e, 'location')}
                         />
                 <TextField
                             label="Date Posted"
