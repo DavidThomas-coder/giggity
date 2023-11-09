@@ -97,15 +97,11 @@ const GigForm = () => {
                             value={newGig.datePosted}
                             onChange={(e) => handleGigChange(e, 'datePosted')}
                         />
-                <label>
-                    Expiration Date:
-                        <input
-                            type="text"
-                            name="gigExpirationDate"
+                <TextField
+                            label="Gig Expiration Date"
                             value={newGig.gigExpirationDate}
-                            onChange={handleGigChange}
+                            onChange={(e) => handleGigChange(e, 'gigExpirationDate')}
                         />
-                </label>
                 <label>
                     Duration:
                         <input
