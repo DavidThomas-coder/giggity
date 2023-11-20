@@ -34,6 +34,7 @@ gigsRouter.post("/", async (req, res) => {
         res.status(201).json({ gig: serializedGig })
     } catch (error) {
         console.log('Error:', error)
+        console.log("Error message is", error.message)
         res.status(500).json({ errors: error.message})
     }
 })
