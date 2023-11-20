@@ -32,7 +32,7 @@ const GigForm = () => {
     }
 
 
-    const postGig = async (formPayload) => {
+    const postGig = async () => {
         try {
             console.log('NewGig before Post:', newGig)
 
