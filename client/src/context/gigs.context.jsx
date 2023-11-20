@@ -10,6 +10,6 @@ export const GigProvider = ({ children }) => {
     const value = { currentGig, setCurrentGig}
 
     useEffect(() => {
-        
-    })
+
+    }, [])
 }
