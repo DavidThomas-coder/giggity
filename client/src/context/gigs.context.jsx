@@ -7,4 +7,9 @@ export const GigContext = createContext({
 
 export const GigProvider = ({ children }) => {
     const [currentGig, setCurrentGig] = useState(null)
+    const value = { currentGig, setCurrentGig}
+
+    useEffect(() => {
+        
+    })
 }
