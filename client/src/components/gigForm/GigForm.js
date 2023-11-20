@@ -31,6 +31,20 @@ const GigForm = () => {
         }
     }
 
+    const clearForm = event => {
+        event.preventDefault()
+        setNewGig({
+        gigName: '',
+        description: '',
+        location:'',
+        datePosted: '',
+        gigExpirationDate: '',
+        duration: '',
+        compensation: '',
+        gigCategory: '',
+        })
+    }
+
 
     const postGig = async () => {
         try {
@@ -124,7 +138,7 @@ const GigForm = () => {
                             value={newGig.gigCategory}
                             onChange={(e) => handleGigChange(e, 'gigCategory')}
                         />
-                <Button variant="contained" type="submit">Submit Gig</Button>
+                <Button variant="contained" type="submit" onClick={clearForm}>Submit Gig</Button>
             </form>
         </div>
     )
