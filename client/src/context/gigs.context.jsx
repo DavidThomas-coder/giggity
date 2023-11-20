@@ -13,5 +13,5 @@ export const GigProvider = ({ children }) => {
 
     }, [])
 
-    return < GigContext.Provider value={value} ></GigContext.Provider>
+    return <GigContext.Provider value={value}>{children}</GigContext.Provider>
 }
