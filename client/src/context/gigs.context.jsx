@@ -12,4 +12,6 @@ export const GigProvider = ({ children }) => {
     useEffect(() => {
 
     }, [])
+
+    return < GigContext.Provider value={value} ></GigContext.Provider>
 }
