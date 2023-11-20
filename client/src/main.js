@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </GigProvider>
       }
     } else {
-      render(<App />, reactElement);
+      <GigProvider>
+        render(<App />, reactElement);
+      </GigProvider>
     }
   }
 });
