@@ -32,7 +32,7 @@ const GigForm = () => {
     }
 
 
-    const postGig = async () => {
+    const postGig = async (formPayload) => {
         try {
             console.log('NewGig before Post:', newGig)
 
@@ -42,7 +42,10 @@ const GigForm = () => {
                     'content-type': 'application/json',
                 },
                 // body: JSON.stringify({gigName: newGig.gigName})
-                body: JSON.stringify({gigName: newGig.gigName, description: newGig.description, location: newGig.location, datePosted: newGig.datePosted, gigExpirationDate: newGig.gigExpirationDate, compensation: newGig.compensation, gigCategory: newGig.gigCategory})
+                body: JSON.stringify({gigName: newGig.gigName, description: newGig.description, 
+                    location: newGig.location, datePosted: newGig.datePosted, 
+                    gigExpirationDate: newGig.gigExpirationDate, compensation: newGig.compensation, 
+                    gigCategory: newGig.gigCategory})
             })
 
             if (response.ok) {
