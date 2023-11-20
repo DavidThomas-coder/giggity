@@ -34,14 +34,15 @@ const GigForm = () => {
 
     const postGig = async () => {
         try {
-            console.log('NewGig:', newGig)
+            console.log('NewGig before Post:', newGig)
 
             const response = await fetch('/api/v1/gigs', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
                 },
-                body: JSON.stringify({gigName: newGig.gigName})
+                // body: JSON.stringify({gigName: newGig.gigName})
+                body: JSON.stringify({newGig})
             })
 
             if (response.ok) {
