@@ -61,6 +61,7 @@ const GigForm = () => {
                     location: newGig.location, 
                     datePosted: newGig.datePosted, 
                     gigExpirationDate: newGig.gigExpirationDate, 
+                    duration: newGig.duration,
                     compensation: newGig.compensation, 
                     gigCategory: newGig.gigCategory})
             })
@@ -138,7 +139,7 @@ const GigForm = () => {
                             value={newGig.gigCategory}
                             onChange={(e) => handleGigChange(e, 'gigCategory')}
                         />
-                <Button variant="contained" type="submit" onClick={clearForm}>Submit Gig</Button>
+                <Button variant="contained" type="submit">Submit Gig</Button>
             </form>
         </div>
     )
