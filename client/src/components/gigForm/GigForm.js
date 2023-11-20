@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
+import { Redirect } from "react-router-dom"
 import Button from '@mui/material/Button'
 import { TextField } from "@mui/material"
 
 const GigForm = () => {
-    
     const [newGig, setNewGig] = useState({
         gigName: '',
         description: '',
@@ -16,6 +16,7 @@ const GigForm = () => {
     })
     const [gigs, setGigs] = useState([])
     const [gigId, setGigId] = useState(null)
+    const [shouldRedirect, setShouldRedirect] = useState(false)
 
     const fetchGigs = async () => {
         try {
@@ -31,22 +32,8 @@ const GigForm = () => {
         }
     }
 
-    // const clearForm = event => {
-    //     event.preventDefault()
-    //     setNewGig({
-    //     gigName: '',
-    //     description: '',
-    //     location:'',
-    //     datePosted: '',
-    //     gigExpirationDate: '',
-    //     duration: '',
-    //     compensation: '',
-    //     gigCategory: '',
-    //     })
-    // }
 
-
-    const postGig = async () => {
+    const postGig = async (newGigData) => {
         try {
             console.log('NewGig before Post:', newGig)
 
@@ -55,7 +42,7 @@ const GigForm = () => {
                 headers: {
                     'content-type': 'application/json',
                 },
-                body: JSON.stringify(newGig)
+                body: JSON.stringify(newGigData)
             })
 
             if (response.ok) {
@@ -74,7 +61,7 @@ const GigForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        postGig()
+        postGig(newGig)
     }
 
     const handleGigChange = (event, fieldName) => {
