@@ -18,13 +18,13 @@ gigsRouter.get("/", async (req, res) => {
 
 gigsRouter.post("/", async (req, res) => {
     try {
-        const { gigName, description, location, datePosted, gigExpirationData, duration, compensation, gigCategory } = req.body
+        const { gigName, description, location, datePosted, gigExpirationDate, duration, compensation, gigCategory } = req.body
         const newGig = await Gig.query().insert({
             gigName, 
             description, 
             location, 
             datePosted, 
-            gigExpirationData, 
+            gigExpirationDate, 
             duration, 
             compensation, 
             gigCategory,
@@ -34,6 +34,7 @@ gigsRouter.post("/", async (req, res) => {
         res.status(201).json({ gig: serializedGig })
     } catch (error) {
         console.log('Error:', error)
+        console.log("Error message is", error.message)
         res.status(500).json({ errors: error.message})
     }
 })

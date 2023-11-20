@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
+import { Redirect } from "react-router-dom"
 import Button from '@mui/material/Button'
 import { TextField } from "@mui/material"
 
 const GigForm = () => {
-    
     const [newGig, setNewGig] = useState({
         gigName: '',
         description: '',
@@ -16,6 +16,7 @@ const GigForm = () => {
     })
     const [gigs, setGigs] = useState([])
     const [gigId, setGigId] = useState(null)
+    const [shouldRedirect, setShouldRedirect] = useState(false)
 
     const fetchGigs = async () => {
         try {
@@ -32,23 +33,23 @@ const GigForm = () => {
     }
 
 
-    const postGig = async () => {
+    const postGig = async (newGigData) => {
         try {
-            console.log('NewGig:', newGig)
+            console.log('NewGig before Post:', newGig)
 
             const response = await fetch('/api/v1/gigs', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
                 },
-                body: JSON.stringify({gigName: newGig.gigName})
+                body: JSON.stringify(newGigData)
             })
 
             if (response.ok) {
                 const body = await response.json()
                 const { id } = body.gig
                 setGigId(id)
-                setRedirect(true)
+                setShouldRedirect(true)
             } else {
                 console.log('failed to add Gig:', response.statusText)
             }
@@ -60,7 +61,17 @@ const GigForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        postGig()
+        postGig(newGig)
+        setNewGig({
+            gigName: '',
+            description: '',
+            location:'',
+            datePosted: '',
+            gigExpirationDate: '',
+            duration: '',
+            compensation: '',
+            gigCategory: ''
+        })
     }
 
     const handleGigChange = (event, fieldName) => {
@@ -69,6 +80,10 @@ const GigForm = () => {
             [fieldName]: event.target.value,
         })
     }
+
+    // if (setShouldRedirect) {
+    //     return <Redirect push to="/" />
+    // }
 
     useEffect(() => {
         fetchGigs();
