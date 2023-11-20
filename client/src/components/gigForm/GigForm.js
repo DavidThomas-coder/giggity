@@ -42,9 +42,12 @@ const GigForm = () => {
                     'content-type': 'application/json',
                 },
                 // body: JSON.stringify({gigName: newGig.gigName})
-                body: JSON.stringify({gigName: newGig.gigName, description: newGig.description, 
-                    location: newGig.location, datePosted: newGig.datePosted, 
-                    gigExpirationDate: newGig.gigExpirationDate, compensation: newGig.compensation, 
+                body: JSON.stringify({gigName: newGig.gigName, 
+                    description: newGig.description, 
+                    location: newGig.location, 
+                    datePosted: newGig.datePosted, 
+                    gigExpirationDate: newGig.gigExpirationDate, 
+                    compensation: newGig.compensation, 
                     gigCategory: newGig.gigCategory})
             })
 
