@@ -12,18 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (reactElement) {
     if (config.nodeEnv === "development") {
       try {
-        <GigProvider>
-          render(<App />, reactElement);
-        </GigProvider>
+        render(
+          <GigProvider>
+            <App />
+          </GigProvider>,
+          reactElement);
       } catch (e) {
-        <GigProvider>
-          render(<RedBox error={e} />, reactElement);
-        </GigProvider>
+        render(
+          <GigProvider>
+            <RedBox error={e} />
+          </GigProvider>, 
+          reactElement);
       }
     } else {
-      <GigProvider>
-        render(<App />, reactElement);
-      </GigProvider>
+      render(
+        <GigProvider>
+          <App />
+        </GigProvider>,
+      reactElement);
     }
   }
 });
