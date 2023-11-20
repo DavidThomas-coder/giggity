@@ -49,7 +49,7 @@ const GigForm = () => {
                 const body = await response.json()
                 const { id } = body.gig
                 setGigId(id)
-                setRedirect(true)
+                setShouldRedirect(true)
             } else {
                 console.log('failed to add Gig:', response.statusText)
             }
@@ -62,6 +62,16 @@ const GigForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         postGig(newGig)
+        setNewGig({
+            gigName: '',
+            description: '',
+            location:'',
+            datePosted: '',
+            gigExpirationDate: '',
+            duration: '',
+            compensation: '',
+            gigCategory: ''
+        })
     }
 
     const handleGigChange = (event, fieldName) => {
@@ -70,6 +80,10 @@ const GigForm = () => {
             [fieldName]: event.target.value,
         })
     }
+
+    // if (setShouldRedirect) {
+    //     return <Redirect push to="/" />
+    // }
 
     useEffect(() => {
         fetchGigs();
