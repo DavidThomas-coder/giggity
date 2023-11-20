@@ -24,7 +24,7 @@ gigsRouter.post("/", async (req, res) => {
             description, 
             location, 
             datePosted, 
-            gigExpirationData, 
+            gigExpirationDate, 
             duration, 
             compensation, 
             gigCategory,
