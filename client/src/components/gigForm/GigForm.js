@@ -31,19 +31,19 @@ const GigForm = () => {
         }
     }
 
-    const clearForm = event => {
-        event.preventDefault()
-        setNewGig({
-        gigName: '',
-        description: '',
-        location:'',
-        datePosted: '',
-        gigExpirationDate: '',
-        duration: '',
-        compensation: '',
-        gigCategory: '',
-        })
-    }
+    // const clearForm = event => {
+    //     event.preventDefault()
+    //     setNewGig({
+    //     gigName: '',
+    //     description: '',
+    //     location:'',
+    //     datePosted: '',
+    //     gigExpirationDate: '',
+    //     duration: '',
+    //     compensation: '',
+    //     gigCategory: '',
+    //     })
+    // }
 
 
     const postGig = async () => {
@@ -55,15 +55,7 @@ const GigForm = () => {
                 headers: {
                     'content-type': 'application/json',
                 },
-                // body: JSON.stringify({gigName: newGig.gigName})
-                body: JSON.stringify({gigName: newGig.gigName, 
-                    description: newGig.description, 
-                    location: newGig.location, 
-                    datePosted: newGig.datePosted, 
-                    gigExpirationDate: newGig.gigExpirationDate, 
-                    duration: newGig.duration,
-                    compensation: newGig.compensation, 
-                    gigCategory: newGig.gigCategory})
+                body: JSON.stringify(newGig)
             })
 
             if (response.ok) {
