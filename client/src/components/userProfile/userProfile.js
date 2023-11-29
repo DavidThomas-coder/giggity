@@ -19,7 +19,9 @@ const UserProfile = ({ user }) => {
         }
     }
 
-    
+    useEffect(() => {
+        getPostedGigs()
+    },[])
 
     return (
         <div>
