@@ -4,9 +4,7 @@ import React, {useEffect, useState} from "react"
 
 const UserProfile = ({ user }) => {
 
-    const getPostedGigs = async () => {
-        
-    }
+
 
     return (
         <div>
