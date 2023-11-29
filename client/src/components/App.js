@@ -8,6 +8,7 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import HomePage from "./HomePage";
+import UserProfile from "./userProfile/userProfile";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
