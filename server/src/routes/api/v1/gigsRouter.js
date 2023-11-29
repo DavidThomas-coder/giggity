@@ -9,7 +9,7 @@ gigsRouter.get("/", async (req, res) => {
     try {
         const gigs = await Gig.query()
         // const serializedGig = GigSerializer.showGigDetails(gigs)
-        const serializedGigs = gigs.map(gig => GigSerializer.showGigDetails(gig))
+        const serializedGigs = gig.map(gig => GigSerializer.showGigDetails(gig))
         res.status(200).json({ gigs: serializedGigs })
     } catch (error) {
         console.log(error)
@@ -21,7 +21,7 @@ gigsRouter.get("/:id", async (req, res) => {
     const { id } = req.params
     try {
         const gig = await Gig.query().findById(id)
-        const serializedGigs = gig.map(gig => GigSerializer.showGigDetails(gig))
+        const serializedGigs = GigSerializer.showGigDetails(gig)
         return res.status(200).json({ gig: serializedGigs })
     } catch (error) {
         res.status(500).json({errors: error.message})
