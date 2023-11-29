@@ -7,6 +7,9 @@ import "../assets/scss/main.scss";
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
+import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
+
+
 import HomePage from "./HomePage";
 import UserProfile from "./userProfile/userProfile";
 
