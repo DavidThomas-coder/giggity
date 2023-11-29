@@ -12,11 +12,14 @@ const UserProfile = ({ user }) => {
             if(!response.ok) {
                 throw new Error(`${response.status} (${response.statusText})`)
             }
-            
+            const body = await response.json()
+            setPostedGigs(body)
         } catch (error) {
-            
+            console.error(`Error in fetch; ${error.message}`)
         }
     }
+
+    
 
     return (
         <div>
