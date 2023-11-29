@@ -4,6 +4,8 @@ import React, {useEffect, useState} from "react"
 
 const UserProfile = ({ user }) => {
 
+    console.log(user)
+
     return (
         <div>
             <h1>User Profile</h1>
