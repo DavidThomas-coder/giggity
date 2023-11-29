@@ -4,9 +4,15 @@ import React, {useEffect, useState} from "react"
 
 const UserProfile = ({ user }) => {
 
+    const [postedGigs, setPostedGigs] = useState(null)
+
     const getPostedGigs = async () => {
         try {
-            const response = await fetch("/api/v1/profile/gigs")
+            const response = await fetch(`/api/v1/gigs/${id}`)
+            if(!response.ok) {
+                throw new Error(`${response.status} (${response.statusText})`)
+            }
+            
         } catch (error) {
             
         }
