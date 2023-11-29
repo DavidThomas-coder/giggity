@@ -8,8 +8,9 @@ const gigReviewsRouter = new express.Router();
 gigReviewsRouter.get('/', async (req, res) => {
     try {
         const gigReviews = await GigReview.query()
-        const serializedGigReview = await GigReviewSerializer.showGigReviewDetails(gigReviews)
-        res.status(200).json({ gigReviews: serializedGigReview })
+        // const serializedGigReview = await GigReviewSerializer.showGigReviewDetails(gigReviews)
+        const serializedGigReviews = gigReviews.map(gigReview => GigReviewSerializer.showGigReviewDetails(gigReview))
+        res.status(200).json({ gigReviews: serializedGigReviews })
 
     } catch (error) {
         console.error(error);

@@ -5,6 +5,18 @@ import { User } from "../../../models/index.js";
 
 const usersRouter = new express.Router();
 
+usersRouter.get("/", async (req, res) => {
+  try {
+      const users = await User.query()
+      // const serializedGig = GigSerializer.showGigDetails(gigs)
+      const serializedUsers = users.map(user => UserSerializer.showUserDetails(user))
+      res.status(200).json({ users: serializedUsers })
+  } catch (error) {
+      console.log(error)
+      res.status(500).json({errors: error.message})
+  }
+})
+
 usersRouter.post("/", async (req, res) => {
   const { email, password } = req.body;
   try {
