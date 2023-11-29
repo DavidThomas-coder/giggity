@@ -17,6 +17,17 @@ gigsRouter.get("/", async (req, res) => {
     }
 })
 
+gigsRouter.get("/:id", async (req, res) => {
+    const { id } = req.params
+    try {
+        const gig = await Gig.query().findById(id)
+        const serializedGigs = gig.map(gig => GigSerializer.showGigDetails(gig))
+        return res.status(200).json({ gig: serializedGigs })
+    } catch (error) {
+        res.status(500).json({errors: error.message})
+    }
+})
+
 gigsRouter.post("/", async (req, res) => {
     try {
         const { gigName, description, location, datePosted, gigExpirationDate, duration, compensation, gigCategory } = req.body
