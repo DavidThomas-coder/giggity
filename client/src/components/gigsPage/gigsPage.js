@@ -1,6 +1,7 @@
 import './gigsPage.styles.scss'
 import React, {useEffect, useState} from 'react'
 import GigForm from '../gigForm/GigForm'
+import GigTile from '../gigTile/gigTile'
 
 const GigsPage = ({user}) => {
 
@@ -33,7 +34,7 @@ const GigsPage = ({user}) => {
                 <GigForm />
             </div>
             <div>
-
+                <GigTile gigs={seeGigs}/>
             </div>
         </div>
     )
