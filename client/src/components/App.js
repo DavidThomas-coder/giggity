@@ -12,7 +12,7 @@ import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 
 import HomePage from "./HomePage";
 import UserProfile from "./userProfile/userProfile";
-
+import GigsPage from "./gigsPage/gigsPage";
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
   const fetchCurrentUser = async () => {
@@ -38,7 +38,7 @@ const App = (props) => {
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <AuthenticatedRoute exact path="/profile" component={UserProfile} user={currentUser} />
-        <AuthenticatedRoute exact path="/gigs" component={gigsPage} user={currentUser} />
+        <AuthenticatedRoute exact path="/gigs" component={GigsPage} user={currentUser} />
       </Switch>
     </Router>
   );
