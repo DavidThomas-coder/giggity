@@ -5,7 +5,7 @@ import GigTile from '../gigTile/gigTile'
 
 const GigsPage = ({user}) => {
 
-    const [seeGigs, setSeeGigs] = useState(null)
+    const [seeGigs, setSeeGigs] = useState([])
 
     const letMeSeeThemGigs = async () => {
         try {
