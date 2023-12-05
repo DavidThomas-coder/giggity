@@ -1,30 +1,40 @@
 import './gigsPage.styles.scss'
 import React, {useEffect, useState} from 'react'
 import GigForm from '../gigForm/GigForm'
+import GigTile from '../gigTile/gigTile'
 
 const GigsPage = ({user}) => {
 
-    const [seeGigs, setSeeGigs] = useState(null)
+    const [seeGigs, setSeeGigs] = useState([])
 
     const letMeSeeThemGigs = async () => {
+        console.log("EXECUTING letMeSeeThemGigs...")
         try {
             const response = await fetch('/api/v1/gigs')
             if(!response.ok){
                 throw new Error (`${response.status} (${response.statusText})`)
             }
             const body = await response.json()
-            console.log(body)
-            setSeeGigs(body)
+            console.log("This is the fetch response:", body)
+            setSeeGigs(body.gigs)
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`)
         }
     }
 
-    useEffect(() => {
-        letMeSeeThemGigs()
-    }, [])
+    const gigList = seeGigs.map(gigObject => {
+        return ( 
+            <GigTile key={gigObject.id}
+            gig={gigObject}
+            />
+        )
+    })
 
-    
+    useEffect(() => {
+        console.log("useEffect is running");
+        letMeSeeThemGigs().catch(error => console.error("Error in useEffect:", error));
+      }, []);
+      
 
     return (
         <div>
@@ -33,7 +43,7 @@ const GigsPage = ({user}) => {
                 <GigForm />
             </div>
             <div>
-
+                <ul>{gigList}</ul>
             </div>
         </div>
     )

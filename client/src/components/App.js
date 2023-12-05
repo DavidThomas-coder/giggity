@@ -12,7 +12,7 @@ import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 
 import HomePage from "./HomePage";
 import UserProfile from "./userProfile/userProfile";
-import GigsPage from "./gigsPage/GigsPage";
+import GigsPage from "./gigsPage/gigsPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
