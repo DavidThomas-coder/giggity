@@ -30,8 +30,9 @@ gigsRouter.get("/:id", async (req, res) => {
 
 gigsRouter.post("/", async (req, res) => {
     try {
-        const { gigName, description, location, datePosted, gigExpirationDate, duration, compensation, gigCategory } = req.body
+        const { id, gigName, description, location, datePosted, gigExpirationDate, duration, compensation, gigCategory } = req.body
         const newGig = await Gig.query().insert({
+            id,
             gigName, 
             description, 
             location, 
