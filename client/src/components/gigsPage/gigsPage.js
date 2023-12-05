@@ -43,7 +43,6 @@ const GigsPage = ({user}) => {
             </div>
             <div>
                 <ul>{gigList}</ul>
-                
             </div>
         </div>
     )
