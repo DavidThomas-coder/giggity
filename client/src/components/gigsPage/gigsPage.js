@@ -25,6 +25,7 @@ const GigsPage = ({user}) => {
         return ( 
             <GigTile key={gigObject.id}
             gig={gigObject}
+            />
         )
     })
 
@@ -41,7 +42,7 @@ const GigsPage = ({user}) => {
                 <GigForm />
             </div>
             <div>
-                <GigTile gigs={seeGigs}/>
+                {gigList}
             </div>
         </div>
     )
