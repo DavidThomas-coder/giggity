@@ -29,11 +29,11 @@ const GigsPage = ({user}) => {
         )
     })
 
+    console.log("Gig List:", gigList)
+
     useEffect(() => {
         letMeSeeThemGigs()
     }, [])
-
-    
 
     return (
         <div>
@@ -42,7 +42,8 @@ const GigsPage = ({user}) => {
                 <GigForm />
             </div>
             <div>
-                {gigList}
+                <ul>{gigList}</ul>
+                
             </div>
         </div>
     )

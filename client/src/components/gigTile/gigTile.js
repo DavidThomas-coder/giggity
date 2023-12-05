@@ -8,9 +8,9 @@ const GigTile = (props) => {
 
     return (
         <div>
-            {props.gigs.gigs && (
+            {props.gig && (
                 <div>
-                    {props.gigs.gigs.gigName}
+                    {props.gig.gigName}
                 </div>
             )}
         </div>
