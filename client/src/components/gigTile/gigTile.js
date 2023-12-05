@@ -8,7 +8,7 @@ const GigTile = (props) => {
 
     return (
         <div>
-            WUddup I'm Tile
+            {props.gigs.gigName}
         </div>
     )
 }
