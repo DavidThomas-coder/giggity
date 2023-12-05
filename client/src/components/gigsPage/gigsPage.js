@@ -8,14 +8,15 @@ const GigsPage = ({user}) => {
     const [seeGigs, setSeeGigs] = useState([])
 
     const letMeSeeThemGigs = async () => {
+        console.log("EXECUTING...")
         try {
             const response = await fetch('/api/v1/gigs')
             if(!response.ok){
                 throw new Error (`${response.status} (${response.statusText})`)
             }
             const body = await response.json()
-            console.log(body)
-            setSeeGigs(body)
+            console.log("BODY BODY BODY", body)
+            setSeeGigs(body.gigs)
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`)
         }
@@ -29,11 +30,11 @@ const GigsPage = ({user}) => {
         )
     })
 
-    console.log("Gig List:", gigList)
-
     useEffect(() => {
-        letMeSeeThemGigs()
-    }, [])
+        console.log("useEffect is running");
+        letMeSeeThemGigs().catch(error => console.error("Error in useEffect:", error));
+      }, []);
+      
 
     return (
         <div>
