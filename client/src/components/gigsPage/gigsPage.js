@@ -8,14 +8,14 @@ const GigsPage = ({user}) => {
     const [seeGigs, setSeeGigs] = useState([])
 
     const letMeSeeThemGigs = async () => {
-        console.log("EXECUTING...")
+        console.log("EXECUTING letMeSeeThemGigs...")
         try {
             const response = await fetch('/api/v1/gigs')
             if(!response.ok){
                 throw new Error (`${response.status} (${response.statusText})`)
             }
             const body = await response.json()
-            console.log("BODY BODY BODY", body)
+            console.log("This is the fetch response:", body)
             setSeeGigs(body.gigs)
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`)
