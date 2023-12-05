@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom"
 import React, {useEffect, useState} from "react"
 
 const UserProfile = ({ user }) => {
-
-    const [postedGigs, setPostedGigs] = useState(null)
     
-    console.log('user', user)
+    const [postedGigs, setPostedGigs] = useState([])
+    const id = user.id
 
     const getPostedGigs = async () => {
         console.log('getPostedGigs word word word')
@@ -18,19 +17,35 @@ const UserProfile = ({ user }) => {
             const body = await response.json()
             console.log("Here's the body from the backend:", body)
             setPostedGigs(body)
+            console.log( 'here be body', body)
         } catch (error) {
             console.error(`Error in fetch; ${error.message}`)
         }
     }
+    console.log('hello Im gig:', postedGigs)
 
-    useEffect(() => {
-        getPostedGigs()
-    },[])
+    const gigMap =
+    Array.isArray(postedGigs) &&
+    postedGigs.map(postedGigs => {
+        return (
+            <GigTile key={postedGigs.id} gig={postedGigs} />
+            )
+        })
+
+        useEffect(() => {
+            getPostedGigs()
+        },[])
 
     return (
         <div>
+            <div>
             <h1>User Profile</h1>
             <p>Name: {user.firstName}</p>
+            
+            </div>
+            <div>
+            {gigMap}
+            </div>
         </div>
     )
 }
