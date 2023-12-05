@@ -21,6 +21,13 @@ const GigsPage = ({user}) => {
         }
     }
 
+    const gigList = seeGigs.map(gigObject => {
+        return ( 
+            <GigTile key={gigObject.id}
+            gig={gigObject}
+        )
+    })
+
     useEffect(() => {
         letMeSeeThemGigs()
     }, [])
