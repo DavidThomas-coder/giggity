@@ -1,15 +1,17 @@
 import "./UserProfile.styles.scss"
-
+import { useParams } from "react-router-dom"
 import React, {useEffect, useState} from "react"
 
 const UserProfile = ({ user }) => {
 
     const [postedGigs, setPostedGigs] = useState(null)
+    
+    console.log('user', user)
 
-    const getPostedGigs = async (userId) => {
-        console.log('getPostedGigs')
+    const getPostedGigs = async () => {
+        console.log('getPostedGigs word word word')
         try {
-            const response = await fetch(`/api/v1/users/${userId}/gigs`)
+            const response = await fetch(`/api/v1/users/${user.id}/gigs`)
             if(!response.ok) {
                 throw new Error(`${response.status} (${response.statusText})`)
             }
