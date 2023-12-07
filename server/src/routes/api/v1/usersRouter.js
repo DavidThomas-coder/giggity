@@ -20,6 +20,10 @@ usersRouter.get("/", async (req, res) => {
 
 usersRouter.get("/id", async (req, res) => {
   const userId = req.params.id
+
+  try {
+    const user = await User.query().findById(userId)
+  }
 })
 
 usersRouter.post("/", async (req, res) => {
