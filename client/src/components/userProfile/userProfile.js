@@ -7,6 +7,7 @@ const UserProfile = ({ user }) => {
     const [postedGigs, setPostedGigs] = useState(null)
 
     const getPostedGigs = async () => {
+        console.log('getPostedGigs')
         try {
             const response = await fetch(`/api/v1/gigs/${id}`)
             if(!response.ok) {
