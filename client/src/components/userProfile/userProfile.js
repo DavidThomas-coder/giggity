@@ -41,7 +41,7 @@ const UserProfile = ({ user }) => {
             <div>
             <h1>User Profile</h1>
             <p>Name: {user.firstName}</p>
-            
+            <GigTile/>
             </div>
             <div>
             {gigMap}
