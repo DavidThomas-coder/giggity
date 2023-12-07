@@ -4,7 +4,7 @@ import { Gig, User } from "../../../models/index.js"
 
 const usersGigsRouter = new express.Router();
 
-usersGigsRouter.get('/:id/gigs', async (req, res) => {
+usersGigsRouter.get("/:id/gigs", async (req, res) => {
     const { id } = req.params
 
     try {
