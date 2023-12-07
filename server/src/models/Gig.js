@@ -8,7 +8,7 @@ class Gig extends Model {
     static get jsonSchema() {
         return {
             type: 'object',
-            required: ['gigName', 'description', 'location', 'datePosted', 'gigExpirationDate', 'compensation', 'gigCategory'],
+            required: ['gigName', 'description', 'location', 'datePosted', 'gigExpirationDate', 'compensation', 'gigCategory', 'ownerId'],
             properties: {
                 gigName: { type:'string' },
                 description: { type:'string' },
@@ -16,7 +16,8 @@ class Gig extends Model {
                 datePosted: { type:'string' },
                 gigExpirationDate: { type:'string' },
                 compensation: { type:['integer', 'string'] },
-                gigCategory: { type:'string' }
+                gigCategory: { type:'string' },
+                ownerId: { type: ['integer', 'string'] }
         }
     }
 }
