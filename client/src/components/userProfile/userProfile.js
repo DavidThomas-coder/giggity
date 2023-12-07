@@ -16,6 +16,7 @@ const UserProfile = ({ user }) => {
                 throw new Error(`${response.status} (${response.statusText})`)
             }
             const body = await response.json()
+            console.log("Here's the body from the backend:", body)
             setPostedGigs(body)
         } catch (error) {
             console.error(`Error in fetch; ${error.message}`)
