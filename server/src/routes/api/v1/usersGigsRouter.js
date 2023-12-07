@@ -18,6 +18,7 @@ usersGigsRouter.get('/:id/gigs', async (req, res) => {
             ownedGigs: serializedOwnedGigs
         })
     } catch (error) {
+        console.log(error)
         return res.status(500).json({ error: error.message })
     }
 })

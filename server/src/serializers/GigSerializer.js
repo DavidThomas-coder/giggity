@@ -1,6 +1,8 @@
 class GigSerializer {
     static showGigDetails(gig) {
         const allowedAttributes = [
+            'id',
+            'ownerId',
             'gigName', 
             'description', 
             'location',

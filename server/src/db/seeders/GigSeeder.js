@@ -14,7 +14,7 @@ class GigSeeder {
             duration: "10 minutes",
             compensation: "$20",
             gigCategory: "Manual labor",
-            ownerId: 1,
+            ownerId: "1",
           },
           {
             gigName: "Basting a turkey",
@@ -25,7 +25,7 @@ class GigSeeder {
             duration: "four hours",
             compensation: "$6000",
             gigCategory: "Cooking",
-            ownerId: 2,
+            ownerId: "2",
           },
           {
             gigName: "Lost in Elden Ring",
@@ -37,7 +37,7 @@ class GigSeeder {
             duration: "A long as it takes",
             compensation: "$200",
             gigCategory: "Gaming",
-            ownerId: 3,
+            ownerId: "3",
           },
         ];
 
