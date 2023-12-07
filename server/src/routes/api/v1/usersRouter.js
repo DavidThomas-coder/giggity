@@ -9,6 +9,7 @@ usersRouter.get("/", async (req, res) => {
   try {
       const users = await User.query()
       // const serializedGig = GigSerializer.showGigDetails(gigs)
+      // ass
       const serializedUsers = users.map(user => UserSerializer.showUserDetails(user))
       res.status(200).json({ users: serializedUsers })
   } catch (error) {
