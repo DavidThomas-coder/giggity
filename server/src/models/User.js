@@ -91,6 +91,14 @@ class User extends uniqueFunc(Model) {
           from: 'users.id',
           to: 'userReviews.userId'
         }
+      },
+      ownedGigs: {
+        relation: Model.HasManyRelation,
+        modelClass: Gig,
+        join: {
+          from: 'users.id',
+          to: 'gigs.ownerId'
+        }
       }
     }
   }
