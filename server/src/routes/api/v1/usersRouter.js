@@ -18,12 +18,14 @@ usersRouter.get("/", async (req, res) => {
   }
 })
 
-usersRouter.get("/id", async (req, res) => {
+usersRouter.get("/:id", async (req, res) => {
   const userId = req.params.id
 
   try {
     const user = await User.query().findById(userId)
   }
+
+  const serializedUser = UserSerializer.showUserDetails(user)
 })
 
 usersRouter.post("/", async (req, res) => {
