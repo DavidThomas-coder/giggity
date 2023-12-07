@@ -1,6 +1,6 @@
 import "./UserProfile.styles.scss"
 import React, {useEffect, useState} from "react"
-
+import UserGigTile from '../userGigTile/UserGigTile.js'
 const UserProfile = ({ user }) => {
     
     const [postedGigs, setPostedGigs] = useState([])
