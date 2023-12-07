@@ -26,8 +26,9 @@ usersRouter.get("/:id", async (req, res) => {
 
     const serializedUser = UserSerializer.showUserDetails(User)
     return res.status(200).json({ user: serializedUser })
+  } catch (error) {
+    return res.status(500).json({errors: error })
   }
-
 })
 
 usersRouter.post("/", async (req, res) => {
