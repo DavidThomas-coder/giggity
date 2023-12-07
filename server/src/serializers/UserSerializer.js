@@ -2,6 +2,7 @@ class UserSerializer {
     static showUserDetails(user) {
         const allowedAttributes = 
             [
+            "id",
             "firstName",
             "lastName",
             "email",
