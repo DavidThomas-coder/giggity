@@ -42,7 +42,10 @@ const UserProfile = ({ user }) => {
             <p>Name: {user.firstName}</p>
             </div>
             <div>
-            {gigMap}
+                <UserGigTile gig={postedGigs}/>
+            </div>
+            <div>
+                {gigMap}
             </div>
         </div>
     )
