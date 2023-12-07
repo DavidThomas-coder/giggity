@@ -24,7 +24,7 @@ usersRouter.get("/:id", async (req, res) => {
   try {
     const user = await User.query().findById(userId)
 
-    const serializedUser = UserSerializer.showUserDetails(User)
+    const serializedUser = UserSerializer.showUserDetails(user)
     return res.status(200).json({ user: serializedUser })
   } catch (error) {
     return res.status(500).json({errors: error })
