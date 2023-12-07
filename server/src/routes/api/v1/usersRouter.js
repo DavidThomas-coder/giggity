@@ -18,6 +18,10 @@ usersRouter.get("/", async (req, res) => {
   }
 })
 
+usersRouter.get("/id", async (req, res) => {
+  const userId = req.params.id
+})
+
 usersRouter.post("/", async (req, res) => {
   const { email, password } = req.body;
   try {
