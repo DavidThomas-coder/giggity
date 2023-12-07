@@ -21,15 +21,14 @@ const UserProfile = ({ user }) => {
             console.error(`Error in fetch; ${error.message}`)
         }
     }
-    console.log('hello Im gig:', postedGigs)
 
     const gigMap =
     Array.isArray(postedGigs) &&
-    postedGigs.map(postedGigs => {
-        return (
-            <UserGigTile key={postedGigs.id} gig={postedGigs} />
-            )
-        })
+    postedGigs.map((postedGigs) => {
+       return (
+        <UserGigTile key={postedGigs.id} gig={postedGigs} />
+    )
+       })
 
         useEffect(() => {
             getPostedGigs()
@@ -42,7 +41,8 @@ const UserProfile = ({ user }) => {
             <p>Name: {user.firstName}</p>
             </div>
             <div>
-                <UserGigTile gig={postedGigs}/>
+                <UserGigTile gig={postedGigs} />
+
             </div>
             <div>
                 {gigMap}
