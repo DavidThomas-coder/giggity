@@ -1,5 +1,4 @@
 import "./UserProfile.styles.scss"
-import { useParams } from "react-router-dom"
 import React, {useEffect, useState} from "react"
 
 const UserProfile = ({ user }) => {
@@ -28,7 +27,7 @@ const UserProfile = ({ user }) => {
     Array.isArray(postedGigs) &&
     postedGigs.map(postedGigs => {
         return (
-            <GigTile key={postedGigs.id} gig={postedGigs} />
+            <UserGigTile key={postedGigs.id} gig={postedGigs} />
             )
         })
 
@@ -41,7 +40,6 @@ const UserProfile = ({ user }) => {
             <div>
             <h1>User Profile</h1>
             <p>Name: {user.firstName}</p>
-            <GigTile/>
             </div>
             <div>
             {gigMap}
