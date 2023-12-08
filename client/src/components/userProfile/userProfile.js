@@ -16,7 +16,7 @@ const UserProfile = ({ user }) => {
             }
             const body = await response.json()
             console.log("Here's the body from the backend:", body)
-            setPostedGigs(body)
+            setPostedGigs(body.ownedGigs)
             console.log( 'here be body', body)
         } catch (error) {
             console.error(`Error in fetch; ${error.message}`)
