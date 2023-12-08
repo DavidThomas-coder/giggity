@@ -1,13 +1,13 @@
 import React from "react";
 
-const UserGigTile = ({ gig }) => {
-    console.log('props for usergigtile', gig)
+const UserGigTile = (props) => {
+    console.log('props for usergigtile', props)
 
     return (
         <div>
-            <p>Hello</p>
-            <p>{gig.gig.gigName}</p>
-            <p>{gig.gig.description}</p>
+             <p>Hello</p>
+            <p>{props.gigName}</p>
+            <p>{props.description}</p>
         </div>
     )
 }
