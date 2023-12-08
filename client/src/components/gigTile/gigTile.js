@@ -2,7 +2,7 @@ import React from "react";
 
 const GigTile = (props) => {
 
-
+console.log('I am props from user: ', props)
     return (
         <div>
             {props.gig && (
