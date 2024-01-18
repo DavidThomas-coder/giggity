@@ -25,6 +25,7 @@ const GigShowPage = (props) => {
 
     return (
         <div>
+            <h1>GIG SHOW</h1>
             <h1>{gigShow.gigName}</h1>
             <p>{gigShow.description}</p>
         </div>
