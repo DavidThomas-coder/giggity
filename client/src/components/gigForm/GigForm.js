@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom"
 import Button from '@mui/material/Button'
 import { TextField } from "@mui/material"
 
-const GigForm = () => {
+const GigForm = ({ updateGigsList }) => {
     const [newGig, setNewGig] = useState({
         gigName: '',
         description: '',
@@ -49,11 +49,11 @@ const GigForm = () => {
                 const body = await response.json()
                 const { id } = body.gig
                 setGigId(id)
+                updateGigsList()
                 setShouldRedirect(true)
             } else {
                 console.log('failed to add Gig:', response.statusText)
             }
-
         } catch (error) {
             console.log('error in post:', error.message)
         }
