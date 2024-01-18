@@ -30,17 +30,21 @@ const GigsPage = ({user}) => {
         )
     })
 
+    const updateGigsList = () => {
+        letMeSeeThemGigs()
+    }
+
     useEffect(() => {
         console.log("useEffect is running");
         letMeSeeThemGigs().catch(error => console.error("Error in useEffect:", error));
-      }, []);
-      
+    }, []);
+
 
     return (
         <div>
             This is the Gig Page
             <div>
-                <GigForm />
+                <GigForm updateGigsList={updateGigsList}/>
             </div>
             <div>
                 <ul>{gigList}</ul>

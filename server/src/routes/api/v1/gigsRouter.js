@@ -30,6 +30,8 @@ gigsRouter.get("/:id", async (req, res) => {
 
 gigsRouter.post("/", async (req, res) => {
     try {
+        const ownerId = req.user.id
+
         const { id, gigName, description, location, datePosted, gigExpirationDate, duration, compensation, gigCategory } = req.body
         const newGig = await Gig.query().insert({
             id,
@@ -41,6 +43,7 @@ gigsRouter.post("/", async (req, res) => {
             duration, 
             compensation, 
             gigCategory,
+            ownerId: ownerId,
         })
 
         const serializedGig = await GigSerializer.showGigDetails(newGig)

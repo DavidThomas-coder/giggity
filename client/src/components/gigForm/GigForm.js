@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom"
 import Button from '@mui/material/Button'
 import { TextField } from "@mui/material"
 
-const GigForm = () => {
+const GigForm = ({ updateGigsList }) => {
     const [newGig, setNewGig] = useState({
         gigName: '',
         description: '',
@@ -14,24 +14,9 @@ const GigForm = () => {
         compensation: '',
         gigCategory: '',
     })
-    const [gigs, setGigs] = useState([])
+
     const [gigId, setGigId] = useState(null)
     const [shouldRedirect, setShouldRedirect] = useState(false)
-
-    const fetchGigs = async () => {
-        try {
-            const response = await fetch('api/v1/gigs')
-            if (response.ok) {
-                const data = await response.json()
-                setGigs(data.gigs)
-            } else {
-                console.error('Failed to fetch gigs:', response.statusText)
-            }
-        } catch (error) {
-            console.error('Error fetching gigs:', error)
-        }
-    }
-
 
     const postGig = async (newGigData) => {
         try {
@@ -49,11 +34,11 @@ const GigForm = () => {
                 const body = await response.json()
                 const { id } = body.gig
                 setGigId(id)
+                updateGigsList()
                 setShouldRedirect(true)
             } else {
                 console.log('failed to add Gig:', response.statusText)
             }
-
         } catch (error) {
             console.log('error in post:', error.message)
         }
@@ -80,14 +65,6 @@ const GigForm = () => {
             [fieldName]: event.target.value,
         })
     }
-
-    // if (setShouldRedirect) {
-    //     return <Redirect push to="/" />
-    // }
-
-    useEffect(() => {
-        fetchGigs();
-    }, []);
 
     return (
         <div>
