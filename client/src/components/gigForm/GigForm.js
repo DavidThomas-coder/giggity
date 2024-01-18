@@ -14,24 +14,9 @@ const GigForm = ({ updateGigsList }) => {
         compensation: '',
         gigCategory: '',
     })
-    const [gigs, setGigs] = useState([])
+
     const [gigId, setGigId] = useState(null)
     const [shouldRedirect, setShouldRedirect] = useState(false)
-
-    const fetchGigs = async () => {
-        try {
-            const response = await fetch('api/v1/gigs')
-            if (response.ok) {
-                const data = await response.json()
-                setGigs(data.gigs)
-            } else {
-                console.error('Failed to fetch gigs:', response.statusText)
-            }
-        } catch (error) {
-            console.error('Error fetching gigs:', error)
-        }
-    }
-
 
     const postGig = async (newGigData) => {
         try {
@@ -80,14 +65,6 @@ const GigForm = ({ updateGigsList }) => {
             [fieldName]: event.target.value,
         })
     }
-
-    // if (setShouldRedirect) {
-    //     return <Redirect push to="/" />
-    // }
-
-    useEffect(() => {
-        fetchGigs();
-    }, []);
 
     return (
         <div>
