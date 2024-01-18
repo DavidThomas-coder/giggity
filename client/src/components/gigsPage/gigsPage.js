@@ -33,8 +33,8 @@ const GigsPage = ({user}) => {
     useEffect(() => {
         console.log("useEffect is running");
         letMeSeeThemGigs().catch(error => console.error("Error in useEffect:", error));
-      }, []);
-      
+    }, []);
+
 
     return (
         <div>
