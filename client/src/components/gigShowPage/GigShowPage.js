@@ -1,5 +1,6 @@
 import './gigShowPage.styles.scss';
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 const GigShowPage = () => {
     const [gigShow, setGigShow] = useState({
@@ -13,11 +14,12 @@ const GigShowPage = () => {
         compensation: "",
         ownerId: ""
     });
+    
+    const { id } = useParams()
 
     const getGig = async () => {
-        const gigId = window.location.pathname.split('/').pop(); // Extract gigId from the URL
         try {
-            const response = await fetch(`/api/v1/gigs/${gigId}`);
+            const response = await fetch(`/api/v1/gigs/${id}`);
             if (!response.ok) {
                 const errorMessage = `${response.status} (${response.statusText})`;
                 const error = new Error(errorMessage);
