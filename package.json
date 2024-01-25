@@ -18,5 +18,8 @@
   },
   "engines": {
     "node": "^16.18"
+  },
+  "dependencies": {
+    "@mui/icons-material": "^5.15.6"
   }
 }
