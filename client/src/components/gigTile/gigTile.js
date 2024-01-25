@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const GigTile = (props) => {
+const GigTile = ({ gig }) => {
+  console.log('I am gig from GigTile: ', gig);
 
-console.log('I am props from user: ', props)
-    return (
+  return (
+    <div>
+      {gig && (
         <div>
-            {props.gig && (
-                <div>
-                    {props.gig.gigName}
-                </div>
-            )}
+          <Link to={`/gigs/${gig.id}`}>{gig.gigName}</Link>
         </div>
-    )
+      )}
+    </div>
+  );
 }
 
-export default GigTile
+export default GigTile;

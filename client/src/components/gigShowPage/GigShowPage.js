@@ -17,9 +17,9 @@ const GigShowPage = (props) => {
     })
 
     const getGig = async () => {
-        const gigId = props.match.params.id
+        const gigId = params.id
         try {
-        const response = await fetch(`/api/v1/gigsPage/${gigId}`);
+        const response = await fetch(`/api/v1/gigs/${gigId}`);
         if (!response.ok) {
             const errorMessage = `${response.status} (${response.statusText})`;
             const error = new Error(errorMessage);
