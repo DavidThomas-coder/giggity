@@ -8,7 +8,7 @@ const GigTile = ({ gig }) => {
     <div>
       {gig && (
         <div>
-          <Link to={`/gigs/${gig.id}`}>{gig.gigName}</Link>
+          <Link to={`/gigsPage/${gig.id}`}>{gig.gigName}</Link>
         </div>
       )}
     </div>

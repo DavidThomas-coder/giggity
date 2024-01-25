@@ -1,9 +1,7 @@
-import './gigShowPage.styles.scss'
+import './gigShowPage.styles.scss';
 import React, { useState, useEffect } from "react";
-// import GigForm from '../gigForm/GigForm';
 
-const GigShowPage = (props) => {
-    console.log("Props:", props)
+const GigShowPage = () => {
     const [gigShow, setGigShow] = useState({
         id: "",
         gigName: "",
@@ -14,28 +12,28 @@ const GigShowPage = (props) => {
         duration: "",
         compensation: "",
         ownerId: ""
-    })
+    });
 
     const getGig = async () => {
-        const gigId = params.id
+        const gigId = window.location.pathname.split('/').pop(); // Extract gigId from the URL
         try {
-        const response = await fetch(`/api/v1/gigs/${gigId}`);
-        if (!response.ok) {
-            const errorMessage = `${response.status} (${response.statusText})`;
-            const error = new Error(errorMessage);
-            throw error;
-        }
-        const body = await response.json();
-        console.log("Body:", body)
-        setGigShow(body.gig);
+            const response = await fetch(`/api/v1/gigs/${gigId}`);
+            if (!response.ok) {
+                const errorMessage = `${response.status} (${response.statusText})`;
+                const error = new Error(errorMessage);
+                throw error;
+            }
+            const body = await response.json();
+            console.log("Body:", body);
+            setGigShow(body.gig);
         } catch (err) {
-        console.error(`Error in fetch: ${err.message}`);
+            console.error(`Error in fetch: ${err.message}`);
         }
     };
 
     useEffect(() => {
-        getGig()
-    }, [])
+        getGig();
+    }, []); // No dependencies, fetch only once on component mount
 
     return (
         <div>
@@ -43,7 +41,7 @@ const GigShowPage = (props) => {
             <h1>{gigShow.gigName}</h1>
             <p>{gigShow.description}</p>
         </div>
-    )
+    );
 }
 
-export default GigShowPage
+export default GigShowPage;
