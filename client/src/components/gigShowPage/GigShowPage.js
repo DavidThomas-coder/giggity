@@ -3,12 +3,21 @@ import React, { useState, useEffect } from "react";
 // import GigForm from '../gigForm/GigForm';
 
 const GigShowPage = (props) => {
+    console.log("Props:", props)
     const [gigShow, setGigShow] = useState({
-        id: ""
+        id: "",
+        gigName: "",
+        description: "",
+        location: "",
+        datePosted: "",
+        gigExpirationDate: "",
+        duration: "",
+        compensation: "",
+        ownerId: ""
     })
 
     const getGig = async () => {
-        const gigId = props.match.params.id;
+        const gigId = props.match.params.gigId
         try {
         const response = await fetch(`/api/v1/gigs/${gigId}`);
         if (!response.ok) {
@@ -17,11 +26,16 @@ const GigShowPage = (props) => {
             throw error;
         }
         const body = await response.json();
+        console.log("Body:", body)
         setGigShow(body.gig);
         } catch (err) {
         console.error(`Error in fetch: ${err.message}`);
         }
     };
+
+    useEffect(() => {
+        getGig()
+    }, [])
 
     return (
         <div>
