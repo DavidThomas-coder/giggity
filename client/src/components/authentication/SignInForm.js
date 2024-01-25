@@ -185,6 +185,7 @@ export default function SignInForm() {
               Sign in
             </Typography>
             <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 1 }}>
+            <label>
               <TextField
                 margin="normal"
                 required
@@ -195,18 +196,23 @@ export default function SignInForm() {
                 autoComplete="email"
                 autoFocus
                 onChange={onInputChange}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                onChange={onInputChange}
-              />
+                />
+                <FormError error={errors.email}/>
+              </label>
+              <label>
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  onChange={onInputChange}
+                  />          
+                  <FormError error={errors.password}/>
+              </label>
               <Button
                 type="submit"
                 fullWidth
